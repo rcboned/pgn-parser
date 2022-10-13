@@ -23,7 +23,7 @@ abstract class ParserAbstract
      */
     protected $games;
 
-    protected $multiLineAnnotationDepth = 0;
+    protected int $multiLineAnnotationDepth = 0;
 
     /**
      * @var Game[]
@@ -75,12 +75,14 @@ abstract class ParserAbstract
         $this->multiLineAnnotationDepth = 0;
     }
 
-    protected function parse($input)
+    protected function parse($input): void
     {
         $handle = fopen($input, "r");
 
         $this->createCurrentGame();
+        
         $pgnBuffer = null;
+        
         $haveMoves = false;
         while (($line = fgets($handle, 4096)) !== false) {
             // When reading files line-by-line, there is a \n at the end, so remove it.
