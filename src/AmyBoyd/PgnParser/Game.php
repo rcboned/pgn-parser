@@ -7,7 +7,7 @@ class Game
   /**
    * The filename of the PGN database this game came from.
    */
-  protected $fromPgnDatabase;
+  public $fromPgnDatabase;
 
   protected $pgn;
 
