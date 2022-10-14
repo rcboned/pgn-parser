@@ -35,7 +35,7 @@ class Game
 
   protected $result;
 
-  protected $whiteElo;
+  protected string $whiteElo;
 
   protected $blackElo;
 
