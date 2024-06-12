@@ -53,6 +53,7 @@ class Game
     $moves = trim($moves);
 
     $this->moves = $moves;
+    
     $this->movesCount = count(explode(' ', $moves));
   }
 
@@ -60,7 +61,7 @@ class Game
      * Get moves
      * @return string
      */
-  public function getMoves()
+  public function getMoves(): string
   {
     return $this->moves;
   }
